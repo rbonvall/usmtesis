@@ -13,7 +13,7 @@ eps: $(addsuffix .eps , $(basename $(IMAGES)))
 	inkscape --export-eps=$@ $<
 
 clean:
-	rm *.{pdf,eps}
+	rm -f *.{pdf,eps}
 
 .PHONY: all pdf eps clean
 
