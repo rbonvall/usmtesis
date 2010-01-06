@@ -506,21 +506,6 @@ con el estilo de documento `report'}{Usted debería leer la documentación de UTFS
         \end{flushright}
     \fi\fi
     
-    
-    % ------------------------------------------------------------------------
-    {
-    \typeout{Acknowledgements}
-    \input{\@ack}
-    }
-    {
-    \typeout{Resumen}
-    \input{\@resumenesp}
-    }
-    {
-    \typeout{Abstract}
-    \input{\@resumening}
-    }
-         
     \iffront@pages\tableofcontents\else\addtocounter{page}{1}\fi
     \newpage
     \iftablespage
@@ -531,11 +516,6 @@ con el estilo de documento `report'}{Usted debería leer la documentación de UTFS
         \addcontentsline{toc}{chapter}{Index of Figures}\listoffigures
         \newpage
     \fi
-    {\typeout{Abbreviations} 
-     \input{\@abreviaciones}   
-     }    
-    
-    
 }
 \def\nonumchapter#1{%
     \chapter*{#1}
