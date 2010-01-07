@@ -39,7 +39,7 @@
     \title{Cómo escribir una tesis\\
            con dos líneas en los títulos}
     \author{Rodrigo Salas}
-    
+
     \profguia{Profesor Guía}         %Cambiado a partir de supervisor
     \profcorr{Profesor Correferente} %Cambiado a partir de firstreader
     \profext{Profesor Externo}       %Cambiado a partir de secondreader
@@ -50,13 +50,13 @@
     }
 
     \beforepreface
- 
+
     \prefacesection{Abstract}
     Un resumen es requerido en todas las tesis.
     ¡Asegurarse que alcance en una página!.
 
     \afterpreface
- 
+
     \chapter{Introducci\'{o}n}
      ...
     \chapter{Conclusiones}
@@ -69,7 +69,7 @@
     \end{document}
 
     Documentación:
-    
+
     Este archivo de estilo modifica el estilo de reporte estándar para 
     respetar las "Regulaciones para la submisión de Tesis" de la Escuela 
     de Graduados de la Universidad Técnica Federico Santa María. Coloca 
@@ -82,9 +82,9 @@
     El comando \afterpreface produce las tablas de contenidos, tablas y figuras 
     (opcionalmente), y coloca las cosas al comienzo del cuerpo principal 
     (en la página 1 con número arábigo).
-    
+
     Los siguientes comandos controlan el typesetting de tu tesis:
-    
+
     Información Básica:
 
     \title{Título de la tesis}
@@ -135,7 +135,7 @@
         - Incluye el nombre del Profesor Correferente.
     \profext{Nombre del Profesor Externo}
         - Incluye el nombre del Profesor Externo (sólo en magíster y doctorado)
-   
+
     Comandos de seccionamiento:
 
     \dedicate{
@@ -145,7 +145,7 @@
     }
         - Produce la página opcional de dedicación.
         Se debe colocar antes del comando \beforepreface.
-    
+
     \prefacesection{Cualquier cosa}
     Blah, blah, blah...
         - Produce una sección de prefacio como el Resumen, 
@@ -159,7 +159,7 @@
 
     \section{Nombre de la sección}
         - Colocado después del capítulo.
-    
+
     \subsection{Nombre de la sección}
         - Colocado después de una sección.
 
@@ -408,7 +408,7 @@ con el estilo de documento `report'}{Usted debería leer la documentación de UTFS
     \begin{center}
         %Como requisito para optar al grado de:\\
         %\uppercase\expandafter{\@degree} \\
-    
+
         %\uppercase\expandafter{\@university} \\
         %\uppercase\expandafter{\@address} \\
         \vskip0.3in       
@@ -438,20 +438,20 @@ con el estilo de documento `report'}{Usted debería leer la documentación de UTFS
         %DEPARTMENTO DE 
         %\uppercase\expandafter{\@dept}
     \end{center}
-    
+
     \null\vskip0.2in
-    
+
     \noindent T\'ITULO DE LA TESIS:\\
     \textbf{\uppercase\expandafter{\@title}}
-    
+
     \null\vskip0.2in
-    
+
     \noindent AUTOR:\\
     \textbf{\uppercase\expandafter{\@author}}
-    
-    
+
+
     \null\vskip0.2in
-    
+
     Tesis presentada como requerimiento parcial
     para optar al grado acad\'{e}mico de
     \textbf{\@degree} y al t\'{i}tulo profesional de
@@ -470,14 +470,14 @@ con el estilo de documento `report'}{Usted debería leer la documentación de UTFS
         \signature{\@profguia}{Profesor Gu\'{i}a} \\
         \sigskip \signature{\@profcorr}{Profesor Correferente} \\
         \sigskip \signature{\@profext}{Profesor Externo} \\
-        
+
     \else % not Ph.D. degree:
         \beginskip
         \signature{Profesor Gu\'{i}a}{\@profguia} \\
         \sigskip \signature{Profesor Correferente}{\@profcorr} \\
     \fi
 
-        
+
     \vskip0.2in plus 1fill minus 0.1in
     \begin{flushright}
     \@submitdate. \\
@@ -505,7 +505,7 @@ con el estilo de documento `report'}{Usted debería leer la documentación de UTFS
         \dedication@text
         \end{flushright}
     \fi\fi
-    
+
     \iffront@pages\tableofcontents\else\addtocounter{page}{1}\fi
     \newpage
     \iftablespage
