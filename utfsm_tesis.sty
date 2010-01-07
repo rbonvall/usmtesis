@@ -287,14 +287,17 @@ con el estilo de documento `report'}{Usted debería leer la documentación de UTFS
 %    \hsize\columnwidth \@parboxrestore}
 
 % Redefinir los macros utilizados para los pie de páginas para usar espaciamiento simple.
-\long\def\@footnotetext#1{\insert\footins{\def\baselinestretch{1}\footnotesize
-    \interlinepenalty\interfootnotelinepenalty 
-    \splittopskip\footnotesep
-    \splitmaxdepth \dp\strutbox \floatingpenalty \@MM
-    \hsize\columnwidth \@parboxrestore
-   \edef\@currentlabel{\csname p@footnote\endcsname\@thefnmark}\@makefntext
-    {\rule{\z@}{\footnotesep}\ignorespaces
-      #1\strut}}}
+\long\def\@footnotetext#1{%
+    \insert\footins{%
+        \def\baselinestretch{1}\footnotesize
+        \interlinepenalty\interfootnotelinepenalty 
+        \splittopskip\footnotesep
+        \splitmaxdepth \dp\strutbox \floatingpenalty \@MM
+        \hsize\columnwidth \@parboxrestore
+        \edef\@currentlabel{\csname p@footnote\endcsname\@thefnmark}\@makefntext
+        {\rule{\z@}{\footnotesep}\ignorespaces#1\strut}%
+    }%
+}
 
 \long\def\@makecaption#1#2{%
   \vskip\abovecaptionskip
@@ -318,7 +321,7 @@ con el estilo de documento `report'}{Usted debería leer la documentación de UTFS
 \def\profext#1{\gdef\@profext{#1}}
 \def\twosupervisors{\two@supervisorstrue}
 \def\submitdate#1{\gdef\@submitdate{#1}}
-\def\copyrightyear#1{\gdef\@copyrightyear{#1}} % \author, \title en reporte.
+\def\copyrightyear#1{\gdef\@copyrightyear{#1}}
 \def\degree#1{\gdef\@degree{#1}}
 \def\degreeinitial#1{\gdef\@degreeinitial{#1}}
 \def\msc{\degree{Master of Science}\degreeinitial{M.Sc.}}
@@ -373,17 +376,24 @@ con el estilo de documento `report'}{Usted debería leer la documentación de UTFS
 \def\titlep{
     \thispagestyle{empty}
     \hspace{-0.5cm}
-    \begin{tabular}{c >{\centering\vspace{-1.7cm}}p{9.5cm} c}
-%    \epsfig{file=img/logo_inf,width=65pt} &
-    \includegraphics[width=65pt]{img/logo_inf} &
-    \textsc{\expandafter{\@university} \\
-    Departamento de \expandafter{\@dept} \\  
-    Valpara\'{i}so, Chile} &
-%    \epsfig{file=img/logo_usm,width=70pt}
-    \includegraphics[width=70pt]{img/logo_usm}
+    \begin{center}
+        \begin{tabular}{c >{\centering\vspace{-1.7cm}}p{9.5cm} c}
+            %\epsfig{file=images/logo_inf,width=65pt} &
+            \includegraphics[width=65pt]{images/logo_inf} &
+            \textsc{
+                \expandafter{\@university} \\
+                Departamento de \expandafter{\@dept} \\
+                Valpara\'iso -- Chile
+            } &
+            %\epsfig{file=images/logo_usm,width=70pt}
+            \includegraphics[width=65pt]{images/logo_usm}
+        \end{tabular}
+    \end{center}
     \end{tabular}
     \ifdraft@mode
-      \begin{center} \Large DRAFT COPY\\ \large Printed \today \end{center}
+        \begin{center}
+            \Large BORRADOR \\ \large Impreso el \today
+        \end{center}
     \fi
     \null\vskip1.2in
     \begin{center}
@@ -429,10 +439,7 @@ con el estilo de documento `report'}{Usted debería leer la documentación de UTFS
     \begin{center}
         \textsc{\expandafter{\@university} \\
         Departamento de \expandafter{\@dept} \\
-        Valpara\'{i}so, Chile}
-        %\uppercase\expandafter{\@university} \\
-        %DEPARTMENTO DE 
-        %\uppercase\expandafter{\@dept}
+        Valpara\'iso, Chile}
     \end{center}
 
     \null\vskip0.2in
@@ -476,8 +483,8 @@ con el estilo de documento `report'}{Usted debería leer la documentación de UTFS
 
     \vskip0.2in plus 1fill minus 0.1in
     \begin{flushright}
-    \@submitdate. \\
-    Valpara\'{i}so, Chile. 
+        \@submitdate. \\
+        Valpara\'iso, Chile.
     \end{flushright}
 
 
@@ -492,8 +499,9 @@ con el estilo de documento `report'}{Usted debería leer la documentación de UTFS
     \pagestyle{plain}
     \titlep
     \iffront@pages\signaturepage\else\addtocounter{page}{1}\fi
-   %\ifpermission\permissionpage\else
-    \addtocounter{page}{1} %\fi
+    %\ifpermission\permissionpage\else
+    \addtocounter{page}{1}
+    %\fi
     \iffront@pages\ifdedic@tion
         \newpage \begin{flushright}
         \ \vskip5in
@@ -521,14 +529,14 @@ con el estilo de documento `report'}{Usted debería leer la documentación de UTFS
     \chapter*{#1}
     \addcontentsline{toc}{chapter}{#1}}
 
-\newenvironment{dedication}{\newpage\begin{center}\Large\em\null\vskip1in}%
-{\vfill\end{center}}
-
+\newenvironment{dedication}%
+    {\newpage\begin{center}\Large\em\null\vskip1in}%
+    {\vfill\end{center}}
 
 \def\afterpreface{\newpage
     \pagenumbering{arabic}
     \pagestyle{plain}
-    \typeout{Las p\'{a}ginas del prefacio de la UTFSM_Tesis han sido escritas}
+    \typeout{Prefacio escrito.}
     \properpagestyle}
 
 % Redefine \thebibliography para ir a una nueva página y colocar la entrada en la 
