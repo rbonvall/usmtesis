@@ -129,16 +129,16 @@
 \def\msc{\degree{Master of Science}\degreeinitial{M.Sc.}}
 \def\phd{\degree{Doctor of Philosophy}\degreeinitial{Ph.D.}\ph@dtrue}
 \def\ma{\degree{Master of Arts}\degreeinitial{M.A.}}
-\def\ingej{\degree{Ingeniero en Ejecuci\'{o}n}\degreeinitial{Ing.Ej.}}
+\def\ingej{\degree{Ingeniero en Ejecuci\'on}\degreeinitial{Ing.Ej.}}
 \def\ingciv{\degree{Ingeniero Civil}\degreeinitial{Ing.Civ.}}
 \ingciv % grado por defecto
-\def\magister{\degree{Mag\'{i}ster en Ciencias de la Ingenier\'{i}a Inform\'{a}tica}\degreeinitial{Mg.}\ph@dtrue}
+\def\magister{\degree{Mag\'ister en Ciencias de la Ingenier\'ia Inform\'atica}\degreeinitial{Mg.}\ph@dtrue}
 \def\doctor{\degre{Doctor}\degreeinitial{Dr.}\ph@dtrue}
 \def\@title{}
 \def\@author{}
-\def\@university{Universidad T\'ecnica Federico Santa Mar\'{i}a}
-\def\@address{Av.~España 1680, Valpara\'{i}so}
-\def\@dept{Inform\'{a}tica}
+\def\@university{Universidad T\'ecnica Federico Santa Mar\'ia}
+\def\@address{Av.~Espa\~na 1680, Valpara\'iso}
+\def\@dept{Inform\'atica}
 \def\@faculty{Graduados}
 \def\@profguia{}\def\@profcorr{}\def\@profext{}
 \def\@submitdate{\ifcase\the\month\or
@@ -153,7 +153,7 @@
 \def\dedicate#1{\dedic@tiontrue\gdef\dedication@text{#1}}
 
 \def\draft{\renewcommand{\properpagestyle}{\pagestyle{myheadings}
-\markright{{\rm Versi\'{o}n Borrador -- \today}}}\draft@modetrue\properpagestyle}
+\markright{{\rm Versi\'on  Borrador -- \today}}}\draft@modetrue\properpagestyle}
 \def\nobib{\print@bibfalse}
 \def\nolistoffigures{\figurespagefalse}
 \def\nolistoftables{\tablespagefalse}
@@ -218,10 +218,10 @@
         %\uppercase\expandafter{\@university} \\
         %\uppercase\expandafter{\@address} \\
         \vskip0.3in       
-        \large Comisi\'{o}n Evaluadora: \\
+        \large Comisi\'on Evaluadora: \\
         \large \expandafter{\@profguia} \\
         \large \expandafter{\@profcorr} \\
-        \large \expandafter{\@profext}  \\
+        %\large \expandafter{\@profext} \\
         %\uppercase\expandafter{\@submitdate}
     \end{center}
     \vskip0.25in
@@ -255,10 +255,11 @@
 
     \null\vskip0.2in
 
+    \noindent
     Tesis presentada como requerimiento parcial
-    para optar al grado acad\'{e}mico de
-    \textbf{\@degree} y al t\'{i}tulo profesional de
-    \textbf{Ingeniero Civil en Inform\'{a}tica} de la \@university.
+    para optar al grado acad\'emico de
+    \textbf{\@degree} y al t\'itulo profesional de
+    \textbf{Ingeniero Civil en Inform\'atica} de la \@university.
 
     \iffourth@reader
         \def\sigskip{\vskip0.15in plus 0.2in minus 0.1in}
@@ -270,13 +271,13 @@
 
     \ifph@d
         \beginskip
-        \signature{\@profguia}{Profesor Gu\'{i}a} \\
+        \signature{\@profguia}{Profesor Gu\'ia} \\
         \sigskip \signature{\@profcorr}{Profesor Correferente} \\
         \sigskip \signature{\@profext}{Profesor Externo} \\
 
     \else % not Ph.D. degree:
         \beginskip
-        \signature{Profesor Gu\'{i}a}{\@profguia} \\
+        \signature{Profesor Gu\'ia}{\@profguia} \\
         \sigskip \signature{Profesor Correferente}{\@profcorr} \\
     \fi
 
