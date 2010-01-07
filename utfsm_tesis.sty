@@ -40,10 +40,24 @@
 
 % Se necesita un margen de 1" excepto en la página de binding la cual es de 1 1/2"
 % Las Tesis son por un lado, por lo tanto no nos preopcupamos por \evensidemargin
-\oddsidemargin 0.5in \evensidemargin 0in
-\marginparwidth 40pt \marginparsep 10pt
-\topmargin 0pt \headsep .5in
-\textheight 8.1in \textwidth 6in
+%\oddsidemargin 0.5in
+%\evensidemargin 0in
+\marginparwidth 40pt
+\marginparsep 10pt
+%\topmargin 0pt
+\headsep .5in
+%\textheight 8.1in
+%\textwidth 6in
+\hoffset        -1.0in  % Seteo a 0 el margen izquierdo
+\oddsidemargin   4cm    % Margen izquierdo (pag. impar)
+%\oddsidemargin     0cm  % Ancho Legal 21,59cm
+\evensidemargin  0.5cm  % Alto  Legal 35,56cm
+\textwidth      15.5cm
+\topmargin      -1.5cm
+%\voffset           2cm  % Margen superior
+\textheight       22cm
+%\parindent      0em
+%\parskip        2ex
 
 % No permitir salto de páginas en hyphens (Esto dará algunos underfull vbox's,
 % entonces una alternativa es usar \brokenpenalty=100 y manualmente buscar por
