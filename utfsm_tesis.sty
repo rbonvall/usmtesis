@@ -24,22 +24,19 @@
 \typeout{Tesis Info Style}
 \RequirePackage{ifthen}
 \RequirePackage{latexsym}
-\RequirePackage{tabularx}  
+\RequirePackage{tabularx}
 \RequirePackage{graphicx}
 
-\typeout{Opciones de Estilo del Documento 'UTFSM_tesis'.}
-
 % Define la cabecera de la página para enumerarla solamente.
-%\newcommand{\properpagestyle}{ 
-%       \pagestyle{myheadings}\markboth{}{}\markright{}}
-\newcommand{\properpagestyle}{ 
-       \pagestyle{plain}}
+%\newcommand{\properpagestyle}{\pagestyle{myheadings}\markboth{}{}\markright{}}
+\newcommand{\properpagestyle}{\pagestyle{plain}}
 
 % Lo primero que se hace es ver si el reporte ha sido cargado. 
 % Un error común es tratar de usar suthesis como un documentstyle.
-
-\@ifundefined{chapter}{\@latexerr{La opción de `UTFSM_Tesis' debería ser usada
-con el estilo de documento `report'}{Usted debería leer la documentación de UTFSM_Tesis.}}{}
+\@ifundefined{chapter}{%
+    \@latexerr{La opción de `UTFSM_Tesis' debería ser usado %
+               con el estilo de documento `report'}%
+               {Usted debería leer la documentación de UTFSM_Tesis.}}{}
 
 % Se necesita un margen de 1" excepto en la página de binding la cual es de 1 1/2"
 % Las Tesis son por un lado, por lo tanto no nos preopcupamos por \evensidemargin
@@ -90,16 +87,16 @@ con el estilo de documento `report'}{Usted debería leer la documentación de UTFS
     }%
 }
 
-\long\def\@makecaption#1#2{%
-  \vskip\abovecaptionskip
-  \sbox\@tempboxa{{\small \textbf{#1}: #2}}%
-  \ifdim \wd\@tempboxa >\hsize
-    {\small \textbf{#1}: #2}\par
-  \else
-    \global \@minipagefalse
-    \hb@xt@\hsize{\hfil\box\@tempboxa\hfil}%
-  \fi
-  \vskip\belowcaptionskip}
+%\long\def\@makecaption#1#2{%
+%  \vskip\abovecaptionskip
+%  \sbox\@tempboxa{{\small \textbf{#1}: #2}}%
+%  \ifdim \wd\@tempboxa >\hsize
+%    {\small \textbf{#1}: #2}\par
+%  \else
+%    \global \@minipagefalse
+%    \hb@xt@\hsize{\hfil\box\@tempboxa\hfil}%
+%  \fi
+%  \vskip\belowcaptionskip}
 
 % \author, \title son definidos en el reporte; aquís está el resto de los
 % front que definen macros.
@@ -169,15 +166,13 @@ con el estilo de documento `report'}{Usted debería leer la documentación de UTFS
     \hspace{-0.5cm}
     \begin{center}
         \begin{tabular}{c >{\centering\vspace{-1.7cm}}p{9.5cm} c}
-            %\epsfig{file=images/logo_inf,width=65pt} &
-            \includegraphics[width=65pt]{images/logo_inf} &
-            \textsc{
+            \includegraphics[width=65pt]{images/di} &
+            \textsc{%
                 \expandafter{\@university} \\
-                Departamento de \expandafter{\@dept} \\
-                Valpara\'iso -- Chile
+                Departamento de \expandafter{\@dept} \\  
+                Valpara\'iso -- Chile%
             } &
-            %\epsfig{file=images/logo_usm,width=70pt}
-            \includegraphics[width=65pt]{images/logo_usm}
+            \includegraphics[width=65pt]{images/utfsm}
         \end{tabular}
     \end{center}
     %\end{tabular}
